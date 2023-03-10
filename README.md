@@ -127,7 +127,7 @@ miner.change({
     username: 'changed_username',
     threads: 2,
     rigid: 'myCoolMiner',
-    key: 'superSecret'
+    key: 'superSecret',
     start: true
 })
 ```
