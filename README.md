@@ -31,7 +31,7 @@ const miner = new Duco({
 miner.start()
 ```
 
-**Creating a new miner**
+**Create a new miner**
 ```js
 const miner = new Duco({
     username: 'axorax',
@@ -72,12 +72,33 @@ id: <randomly-generated>
 
 **Set `threads` to maximum amount a user has**
 
-We recommend not using this and just leaving threads to 1
+We recommend not using this and just leaving threads to `1`.
 ```js
 const miner = new Duco({
     username: 'axorax',
     threads: 'hardwareConcurrency'
 })
+```
+
+**Start miner**
+```js
+miner.start()
+```
+
+**Start miner after a certain time**
+```js
+miner.startAfter(5000)
+```
+The time must be passed in milliseconds. In the above example, it will start the miner after 5 seconds (5000ms = 5s)
+
+**Stop miner**
+```js
+miner.stop()
+```
+
+**Stop miner after a certain time**
+```js
+miner.stopAfter(5000)
 ```
 
 **Get values used in a miner**
@@ -88,28 +109,44 @@ let minerId = miner.id;
 // you can get all values like that
 ```
 
-**Starting the miner**
+**Change already created miner**
 ```js
-miner.start()
+miner.change({
+    username: 'changed_username',
+    threads: 2,
+    rigid: 'myCoolMiner',
+    key: 'superSecret'
+})
 ```
 
-**Starting the miner after a certain time**
-```js
-miner.startAfter(5000)
-```
-The time must be passed in milliseconds. In the above example, it will start the miner after 5 seconds (5000ms = 5s)
+After changing the miner, it will not start automatically.
 
-**Stopping the miner**
+**Change miner and start automatically**
 ```js
-miner.stop()
-```
-
-**Stopping the miner after a certain time**
-```js
-miner.stopAfter(5000)
+miner.change({
+    username: 'changed_username',
+    threads: 2,
+    rigid: 'myCoolMiner',
+    key: 'superSecret'
+    start: true
+})
 ```
 
-**Add custom CSS to the miner**
+Set the value of `start` to true to make the miner start automatically after being changed.
+
+**Change already created miner after a certain time**
+```js
+miner.changeAfter({
+    username: 'changed_username',
+    threads: 2,
+    rigid: 'myCoolMiner',
+    key: 'superSecret'
+}, 5000)
+```
+
+This works similar to `miner.change()` but you need to also provide a time in milliseconds after the curly braces `{}`. In the given example, the miner will get changed after 5 seconds (5000ms = 5s)
+
+**Add custom CSS to miner**
 ```js
 miner.addStyle(`
     display: block;
