@@ -1,0 +1,27 @@
+{
+  "name": "duco",
+  "version": "1.1.0",
+  "description": "Easily implement a duino coin miner to your website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Axorax/duco.js.git"
+  },
+  "type": "module",
+  "keywords": [
+    "duino",
+    "duino-coin",
+    "duco",
+    "duino-miner",
+    "miner"
+  ],
+  "author": "Axorax",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Axorax/duco.js/issues"
+  },
+  "homepage": "https://github.com/Axorax/duco.js#readme"
+}
