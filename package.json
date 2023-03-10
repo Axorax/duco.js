@@ -1,6 +1,6 @@
 {
   "name": "duco",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Easily implement a duino coin miner to your website",
   "main": "index.js",
   "scripts": {
