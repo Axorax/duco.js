@@ -101,14 +101,6 @@ miner.stop()
 miner.stopAfter(5000)
 ```
 
-**Get values used in a miner**
-```js
-let minerUsername = miner.username;
-let minerThreads = miner.threads;
-let minerId = miner.id;
-// you can get all values like that
-```
-
 **Change already created miner**
 ```js
 miner.change({
@@ -145,6 +137,29 @@ miner.changeAfter({
 ```
 
 This works similar to `miner.change()` but you need to also provide a time in milliseconds after the curly braces `{}`. In the given example, the miner will get changed after 5 seconds (5000ms = 5s)
+
+**Get values used in a miner**
+```js
+let minerUsername = miner.username;
+let minerThreads = miner.threads;
+let minerId = miner.id;
+// you can get all values like that
+```
+
+**Get time when miner was created**
+```js
+miner.timestamp
+```
+
+**Check if miner is running**
+```js
+miner.running
+```
+
+**Check if miner was changed**
+```js
+miner.changed
+```
 
 **Add custom CSS to miner**
 ```js
