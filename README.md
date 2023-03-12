@@ -148,7 +148,17 @@ let minerId = miner.id;
 
 **Get time when miner was created**
 ```js
-miner.timestamp
+miner.createdTimestamp
+```
+
+**Get time when miner was started**
+```js
+miner.startedTimestamp
+```
+
+**Get time when miner was stopped**
+```js
+miner.stoppedTimestamp
 ```
 
 **Check if miner is running**
@@ -219,3 +229,8 @@ const miner = new Duco({
 
 miner.start()
 ```
+
+---
+
+[Support me on Patreon](https://www.patreon.com/axorax) - 
+[Check out my socials](https://github.com/axorax/socials)
