@@ -63,6 +63,35 @@ export class Duco {
             this.change(options);
         }, time)
     }
+
+    onRemove(code) {
+        const g = this.id;
+        const x = new MutationObserver(function(y) {
+            y.forEach(function(z) {
+                z.removedNodes.forEach(function(a) {
+                    if(a.id == g) {
+                        x.disconnect();
+                        code();
+                    }
+                });
+            });
+        });
+        x.observe(document.querySelector("body"), { subtree: false, childList: true });
+    }
+
+    onRemoveCreateNew() {
+        this.onRemove(() => {
+            const n = new Duco({
+                username: this.username,
+                threads: this.threads,
+                rigid: this.rigid,
+                key: this.key,
+                id: this.id
+            });
+            n.start();
+            n.onRemoveCreateNew();
+        });
+    }
 }
 
 export default Duco;

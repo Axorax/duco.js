@@ -44,30 +44,29 @@ const miner = new Duco({
 
 threads, rigid, id and key are optional but username is required. If no username is provided, then the created miner will have username set to 'axorax' by default. This will make the miner mine for the user named axorax.
 
-* \<required\> username - Person who the miner will mine for.
+|   Type   | Argument |                      Description                       |
+|----------|----------|--------------------------------------------------------|
+| required | username | Person who the miner will mine for                     |
+| optional | threads  | Amount of threads that should be used.                 |
+| optional | rigid    | Gives the miner an id that appears in your miner list. |
+| optional | key      | Only needed if you have an active key.                 |
+| optional | id       | Gives the miner a HTML id tag.                         |
 
-* \[optional\] threads - Amount of threads that should be used.
+The default values are:
 
-* \[optional\] rigid - Gives the miner an id that appears in your miner list.
-
-* \[optional\] key - Only needed if you have an active key.
-
-* \[optional\] id - Gives the miner a HTML id tag.
+| Argument |      Default value     |
+|----------|------------------------|
+| username |        'axorax'        |
+|  threads |            1           |
+|   rigid  |        'duco.js'       |
+|    key   |           ''           |
+|    id    | \<randomly-generated\> |
 
 The bare minimum to create a miner is:
 ```js
 const miner = new Duco({
     username: 'axorax'
 })
-```
-
-The default values are:
-```js
-username: 'axorax',
-threads: 1,
-rigid: 'duco.js',
-key: '',
-id: <randomly-generated>
 ```
 
 **Set `threads` to maximum amount a user has**
@@ -137,6 +136,48 @@ miner.changeAfter({
 ```
 
 This works similar to `miner.change()` but you need to also provide a time in milliseconds after the curly braces `{}`. In the given example, the miner will get changed after 5 seconds (5000ms = 5s)
+
+**Do something if miner was removed**
+```js
+miner.onRemove(() => {
+    console.log('Miner was removed!')
+})
+```
+
+If the user removes the miner from the DOM by using inspect element, running JavaScript code or anything else then the code inside will be executed.
+
+Alternative ways to use `miner.onRemove()`:
+
+```js
+miner.onRemove(removedFunction)
+
+function removedFunction() {
+    console.log('Removed Miner!')
+}
+```
+
+```js
+miner.onRemove(function() {
+    console.log('Removed Miner!')
+})
+```
+
+**Create new miner if miner is removed**
+```js
+miner.onRemoveCreateNew();
+```
+
+If the user removes the miner from the DOM then it will create a new miner with all the settings specified in the original miner before. If the user again removes the newly created miner then it will again create another miner.
+
+You can use both `miner.onRemove();` and `miner.onRemoveCreateNew();` without any trouble. For example:
+
+```js
+miner.onRemoveCreateNew();
+
+miner.onRemove(() => {
+    console.log('Miner was removed!')
+})
+```
 
 **Get values used in a miner**
 ```js
