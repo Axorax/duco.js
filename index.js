@@ -42,6 +42,16 @@ export class Duco {
         }, time)
     }
 
+    delete() {
+        document.querySelectorAll(`#${this.id}`).forEach(e=>e.remove());
+    }
+
+    deleteAfter(time) {
+        setTimeout(() => {
+            this.delete();
+        }, time)
+    }
+
     addStyle(style) {
         document.querySelectorAll(`#${this.id}`).forEach(e=>e.style.cssText=style);
     }
