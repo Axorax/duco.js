@@ -197,7 +197,7 @@ miner.start()
 ```
 
 ### **Via CDN in another file**
-If you want to have use the library in another file then the code will be as follows:
+If you want to use the library in another file then the code will be as follows:
 
 ```html
 <script type="module" src="./script.js"></script>
