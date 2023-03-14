@@ -1,6 +1,6 @@
 {
   "name": "duco",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "Easily implement a duino coin miner to your website",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,19 @@
     "duino-coin",
     "duco",
     "duino-miner",
-    "miner"
+    "miner",
+    "duino-coin-miner",
+    "web-miner",
+    "crypto-miner",
+    "crypto",
+    "duco-miner",
+    "js-miner",
+    "javascript-miner",
+    "duco-js-miner",
+    "duino-js-miner",
+    "duino-coin-js-miner",
+    "browser-miner",
+    "website-miner"
   ],
   "author": "Axorax",
   "license": "MIT",

@@ -5,16 +5,23 @@ duco.js is a JavaScript library that allows you to create a duino coin miner for
 
 ## Installation
 #### **With npm**
+
 ```bash
 npm i duco
 ```
+
 #### **Via CDN**
 
 unpkg
+
 ```js
-import { Duco } from 'https://www.unpkg.com/duco';
+import { Duco } from 'https://www.unpkg.com/duco@1.3.1/index.js';
 ```
+
+Avoid using `https://www.unpkg.com/duco` as it takes a long time to load. Make sure to specify the version and file.
+
 jsdelivr
+
 ```js
 import { Duco } from 'https://cdn.jsdelivr.net/npm/duco';
 ```
@@ -26,9 +33,9 @@ import { Duco } from 'https://cdn.jsdelivr.net/npm/duco';
 ```js
 const miner = new Duco({
     username: 'axorax'
-})
+});
 
-miner.start()
+miner.start();
 ```
 
 #### **Create a new miner**
@@ -39,7 +46,7 @@ const miner = new Duco({
     rigid: 'duco-js-miner',
     key: 'mySecretKey',
     id: 'my-cool-miner'
-})
+});
 ```
 
 threads, rigid, id and key are optional but username is required. If no username is provided, then the created miner will have username set to 'axorax' by default. This will make the miner mine for the user named axorax.
@@ -67,7 +74,7 @@ threads, rigid, id and key are optional but username is required. If no username
 ```js
 const miner = new Duco({
     username: 'axorax'
-})
+});
 ```
 
 #### **Set `threads` to maximum amount a user has**
@@ -78,28 +85,28 @@ We recommend not using this and just leaving threads to `1`.
 const miner = new Duco({
     username: 'axorax',
     threads: 'hardwareConcurrency'
-})
+});
 ```
 
 #### **Start miner**
 ```js
-miner.start()
+miner.start();
 ```
 
 #### **Start miner after a certain time**
 ```js
-miner.startAfter(5000)
+miner.startAfter(5000);
 ```
 The time must be passed in milliseconds. In the above example, it will start the miner after 5 seconds (5000ms = 5s)
 
 #### **Stop miner**
 ```js
-miner.stop()
+miner.stop();
 ```
 
 #### **Stop miner after a certain time**
 ```js
-miner.stopAfter(5000)
+miner.stopAfter(5000);
 ```
 
 #### **Delete miner**
@@ -121,7 +128,7 @@ miner.change({
     threads: 2,
     rigid: 'myCoolMiner',
     key: 'superSecret'
-})
+});
 ```
 
 After changing the miner, it will not start automatically.
@@ -134,7 +141,7 @@ miner.change({
     rigid: 'myCoolMiner',
     key: 'superSecret',
     start: true
-})
+});
 ```
 
 Set the value of `start` to true to make the miner start automatically after being changed.
@@ -146,7 +153,7 @@ miner.changeAfter({
     threads: 2,
     rigid: 'myCoolMiner',
     key: 'superSecret'
-}, 5000)
+}, 5000);
 ```
 
 This works similar to `miner.change()` but you need to also provide a time in milliseconds after the curly braces `{}`. In the given example, the miner will get changed after 5 seconds (5000ms = 5s)
@@ -155,7 +162,7 @@ This works similar to `miner.change()` but you need to also provide a time in mi
 ```js
 miner.onRemove(() => {
     console.log('Miner was removed!')
-})
+});
 ```
 
 If the user removes the miner from the DOM by using inspect element, running JavaScript code or anything else then the code inside will be executed.
@@ -163,17 +170,17 @@ If the user removes the miner from the DOM by using inspect element, running Jav
 Alternative ways to use `miner.onRemove()`:
 
 ```js
-miner.onRemove(removedFunction)
+miner.onRemove(removedFunction);
 
 function removedFunction() {
     console.log('Removed Miner!')
-}
+};
 ```
 
 ```js
 miner.onRemove(function() {
     console.log('Removed Miner!')
-})
+});
 ```
 
 #### **Create new miner if miner is removed**
@@ -190,7 +197,7 @@ miner.onRemoveCreateNew();
 
 miner.onRemove(() => {
     console.log('Miner was removed!')
-})
+});
 ```
 
 #### **Get values used in a miner**
@@ -232,42 +239,10 @@ miner.addStyle(`
     display: block;
     width: 500px:
     height: 400px;
-`)
+`);
 ```
 
 ## Templates
-#### **Install and get started via CDN**
-
-```html
-<script type="module">
-import { Duco } from 'https://www.unpkg.com/duco';
-
-const miner = new Duco({
-    username: 'axorax'
-});
-
-miner.start();
-</script>
-```
-
-#### **Install and get started via CDN in another file**
-
-If you want to use the library in another file then the code will be as follows:
-
-```html
-<script type="module" src="./script.js"></script>
-```
-
-```js
-import { Duco } from 'https://www.unpkg.com/duco';
-
-const miner = new Duco({
-    username: 'axorax' 
-});
-
-miner.start();
-```
-
 #### **Install and get started with npm**
 
 ```bash
@@ -282,6 +257,52 @@ const miner = new Duco({
 });
 
 miner.start();
+```
+
+#### **Install and get started via CDN (unpkg)**
+
+```html
+<script type="module">
+import { Duco } from 'https://www.unpkg.com/duco@1.3.1/index.js';
+
+const miner = new Duco({
+    username: 'axorax'
+});
+
+miner.start();
+</script>
+```
+
+#### **Install and get started via CDN (unpkg) in another file**
+
+If you want to use the library in another file then the code will be as follows:
+
+```html
+<script type="module" src="./script.js"></script>
+```
+
+```js
+import { Duco } from 'https://www.unpkg.com/duco@1.3.1/index.js';
+
+const miner = new Duco({
+    username: 'axorax' 
+});
+
+miner.start();
+```
+
+#### **Install and get started via CDN (jsdelivr)**
+
+```html
+<script type="module">
+import { Duco } from 'https://cdn.jsdelivr.net/npm/duco';
+
+const miner = new Duco({
+    username: 'axorax'
+});
+
+miner.start();
+</script>
 ```
 
 #### **Get dictionary of all values**
@@ -348,6 +369,7 @@ miner.addStyle(`
 ```
 
 #### **Alert user about removed miner**
+
 ```js
 const miner = new Duco({
     username: 'axorax'
@@ -356,8 +378,83 @@ const miner = new Duco({
 miner.start();
 
 miner.onRemove(() => {
-    alert('Mining helps us to provide our awesome services! Maybe change your mind?')
+    alert('Miner was removed!')
 });
+```
+
+#### **Alert about removed miner and allow to enable mining again**
+
+```js
+const text = 'Mining helps us to provide our awesome services! Maybe change your mind?';
+
+const miner = new Duco({
+    username: 'axorax'
+});
+
+miner.start();
+
+miner.onRemove(() => {
+
+    const prompt = confirm(text);
+
+    if (prompt == true) {
+        miner.start();
+    };
+
+});
+```
+
+#### **Start miner only if user gives consent**
+
+```js
+const text = 'Hey there! Do you want to enable mining?';
+
+const miner = new Duco({
+    username: 'axorax'
+});
+
+const prompt = confirm(text);
+
+if (prompt == true) {
+    miner.start();
+}
+```
+
+#### **Mine for the developer of duco.js**
+
+```js
+const miner = new Duco({});
+
+miner.start();
+```
+
+#### **Basic HTML template with duco.js via CDN**
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>duco.js miner</title>
+</head>
+<body>
+
+    <h1>Hello world!</h1>
+
+    <script type="module">
+        import { Duco } from 'https://www.unpkg.com/duco@1.3.1/index.js';
+
+        const miner = new Duco({
+            username: 'axorax'
+        });
+
+        miner.start();
+    </script>
+    
+</body>
+</html>
 ```
 
 ---
