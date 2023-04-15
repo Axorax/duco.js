@@ -1,0 +1,87 @@
+@font-face {
+    font-family: 'open';
+    src: url('./opensans.ttf');
+}
+
+:root {
+    color-scheme: dark;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'open', sans-serif;
+}
+
+body {
+    background: #191919;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+nav {
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    background: #1E1E1E;
+    border-bottom: 1px solid #3e3e3e;
+}
+
+.wrapper {
+    height: calc(100vh - 56.67px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container > div:first-child {
+    margin-bottom: 1.1rem;
+}
+
+.container > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.1rem;
+    justify-content: center;
+}
+
+.wrapper button {
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 9.8px 18px;
+    border-radius: 5px;
+    font-size: .9rem;
+    background: #242424;
+    border: 1.3px solid #2D2D2D;
+    min-height: 3.5rem;
+    min-width: 228.77px;
+}
+
+.wrapper button img {
+    color: #fff;
+    width: 25px;
+}
+
+.wrapper button img:first-child {
+    margin-right: 10px;
+}
+
+.wrapper button img:last-child {
+    width: 20px;
+    margin-left: 2rem;
+    margin-left: auto;
+}
+
+.wrapper button:hover, .wrapper button:focus {
+    background: #1E1E1E;
+    color: #EF6303;
+}
+
+.wrapper button:hover img, .wrapper button:focus img {
+    filter: invert(41%) sepia(16%) saturate(7152%) hue-rotate(6deg) brightness(100%) contrast(98%);
+}

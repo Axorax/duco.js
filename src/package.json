@@ -1,0 +1,49 @@
+{
+  "name": "duco",
+  "version": "2.0.6",
+  "description": "Implement a duco miner and interact with the duco api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Axorax/duco.js.git"
+  },
+  "type": "module",
+  "keywords": [
+    "duino",
+    "duino-coin",
+    "duco",
+    "duino-miner",
+    "miner",
+    "duino-coin-miner",
+    "web-miner",
+    "crypto-miner",
+    "crypto",
+    "duco-miner",
+    "js-miner",
+    "javascript-miner",
+    "duco-js-miner",
+    "duino-js-miner",
+    "duino-coin-js-miner",
+    "browser-miner",
+    "website-miner",
+    "duco-api",
+    "duco-api-interact",
+    "duino-api",
+    "duino-coin-api",
+    "duino-coin-api-interact",
+    "create-miner",
+    "create-duco-miner",
+    "create-duino-coin-miner",
+    "create-duino-miner",
+    "duco.js"
+  ],
+  "author": "Axorax",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Axorax/duco.js/issues"
+  },
+  "homepage": "https://github.com/Axorax/duco.js#readme"
+}
